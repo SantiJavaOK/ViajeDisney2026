@@ -1,7 +1,6 @@
 function Header() {
   return (
     <header className="header">
-      <div className="header-star">✦</div>
 
       <p className="header-subtitle">
         NUESTRA AVENTURA
@@ -16,6 +15,7 @@ function Header() {
       <div className="header-date">
         03 OCT <span>—</span> 16 OCT
       </div>
+
     </header>
   );
 }

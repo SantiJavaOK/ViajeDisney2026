@@ -171,3 +171,137 @@ a.attraction:hover .attraction-arrow {
   opacity: 0.8;
   transform: translate(2px, -2px);
 }
+
+.app {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 255, 255, 0.8),
+      transparent 40%
+    ),
+    #f4efe6;
+
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  padding: 70px 24px 50px;
+}
+
+.header-subtitle {
+  margin: 0 0 12px;
+
+  font-size: 10px;
+  letter-spacing: 4px;
+
+  color: #8b7965;
+}
+
+.header h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 12vw, 64px);
+  font-weight: 400;
+  letter-spacing: 5px;
+
+  color: #292520;
+}
+
+.header-location {
+  margin: 10px 0 26px;
+
+  font-size: 13px;
+  letter-spacing: 6px;
+
+  color: #76695c;
+}
+
+.header-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 12px;
+  letter-spacing: 3px;
+
+  color: #8b7965;
+}
+
+.header-date span {
+  opacity: 0.45;
+}
+
+.day-card {
+  position: relative;
+  margin-bottom: 24px;
+
+  border: 1px solid rgba(91, 76, 60, 0.12);
+  border-radius: 24px;
+
+  background: rgba(255, 252, 246, 0.72);
+
+  box-shadow:
+    0 8px 30px rgba(80, 65, 45, 0.06);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.day-card:hover {
+  border-color: rgba(91, 76, 60, 0.22);
+}
+
+.day-name {
+  color: #756655;
+  opacity: 1;
+}
+
+.day-month {
+  color: #a08d76;
+  opacity: 1;
+}
+
+.day-activity h2 {
+  color: #2d2925;
+}
+
+.day-activity p {
+  color: #8b7965;
+  opacity: 1;
+}
+
+.day-icon {
+  background: #eee6d9;
+}
+
+.day-arrow {
+  border-color: rgba(91, 76, 60, 0.16);
+  color: #756655;
+}
+
+.day-number {
+  color: rgba(91, 76, 60, 0.055);
+}
+
+.attraction {
+  color: #4a423a;
+
+  border-bottom: 1px solid rgba(91, 76, 60, 0.09);
+}
+
+.attraction span:first-child {
+  color: #aa9270;
+  opacity: 1;
+}
+
+a.attraction:hover {
+  color: #292520;
+}
