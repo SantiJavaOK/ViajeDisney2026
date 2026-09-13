@@ -1,20 +1,5 @@
 export const tripDays = [
-  {
-    date: "03",
-    month: "OCT",
-    day: "SÁBADO",
-    activities: [
-      {
-        name: "Llegada a Orlando",
-        icon: "✈️",
-        details: [
-          "Llegada al aeropuerto",
-          "Retiro del auto",
-          "Check-in"
-        ]
-      }
-    ]
-  },
+{ date: "03", month: "OCT", day: "SÁBADO", activities: [ { name: "Shopping", icon: "🛍️", details: [ { name: "Orlando International Premium Outlets", url: "https://www.premiumoutlets.com/outlet/orlando-international" }, { name: "Orlando Outlet Marketplace", url: "https://www.premiumoutlets.com/outlet/orlando-outlet-marketplace" }, { name: "The Florida Mall", url: "https://www.simon.com/mall/the-florida-mall" }, { name: "The Loop", url: "https://www.experiencetheloop.com/" }, { name: "Ross Dress For Less", url: "https://www.rossstores.com/" } ] } ] },
   {
     date: "04",
     month: "OCT",
