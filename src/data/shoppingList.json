@@ -1,0 +1,27 @@
+{
+  "title": "Lista de compras",
+  "location": "Walmart",
+  "icon": "🛒",
+  "items": [
+    {
+      "name": "Agua",
+      "checked": false
+    },
+    {
+      "name": "Gaseosas",
+      "checked": false
+    },
+    {
+      "name": "Snacks",
+      "checked": false
+    },
+    {
+      "name": "Desayuno",
+      "checked": false
+    },
+    {
+      "name": "Comida para la estadía",
+      "checked": false
+    }
+  ]
+}
