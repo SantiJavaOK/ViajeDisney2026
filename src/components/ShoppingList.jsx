@@ -3,6 +3,7 @@ import shoppingList from "../data/shoppingList.json";
 import "./ShoppingList.css";
 
 function ShoppingList() {
+  const [open, setOpen] = useState(false);
   const [items, setItems] = useState(shoppingList.items);
 
   const toggleItem = (index) => {
@@ -16,15 +17,19 @@ function ShoppingList() {
   };
 
   return (
-    <section className="shopping-list">
+    <section className={`shopping-list ${open ? "open" : ""}`}>
 
-      <div className="shopping-header">
+      <button
+        className="shopping-list-button"
+        onClick={() => setOpen(!open)}
+      >
 
         <div className="shopping-icon">
           🛒
         </div>
 
-        <div>
+        <div className="shopping-header-text">
+
           <p className="shopping-subtitle">
             PARA EL VIAJE
           </p>
@@ -34,33 +39,44 @@ function ShoppingList() {
           <p className="shopping-location">
             {shoppingList.location}
           </p>
+
         </div>
 
-      </div>
+        <div className="shopping-arrow">
+          {open ? "↑" : "↓"}
+        </div>
 
-      <div className="shopping-items">
+      </button>
 
-        {items.map((item, index) => (
-          <button
-            key={index}
-            className={`shopping-item ${
-              item.checked ? "checked" : ""
-            }`}
-            onClick={() => toggleItem(index)}
-          >
+      {open && (
+        <div className="shopping-details">
 
-            <span className="shopping-checkbox">
-              {item.checked ? "✓" : ""}
-            </span>
+          <div className="shopping-items">
 
-            <span className="shopping-name">
-              {item.name}
-            </span>
+            {items.map((item, index) => (
+              <button
+                key={index}
+                className={`shopping-item ${
+                  item.checked ? "checked" : ""
+                }`}
+                onClick={() => toggleItem(index)}
+              >
 
-          </button>
-        ))}
+                <span className="shopping-checkbox">
+                  {item.checked ? "✓" : ""}
+                </span>
 
-      </div>
+                <span className="shopping-name">
+                  {item.name}
+                </span>
+
+              </button>
+            ))}
+
+          </div>
+
+        </div>
+      )}
 
     </section>
   );

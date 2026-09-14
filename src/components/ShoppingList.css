@@ -2,8 +2,6 @@
   width: min(100% - 32px, 600px);
   margin: 0 auto 40px;
 
-  padding: 26px;
-
   border: 1px solid rgba(91, 76, 60, 0.12);
   border-radius: 24px;
 
@@ -11,20 +9,50 @@
 
   box-shadow:
     0 8px 30px rgba(80, 65, 45, 0.06);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.shopping-list.open {
+  border-color: rgba(91, 76, 60, 0.2);
+
+  box-shadow:
+    0 12px 35px rgba(80, 65, 45, 0.08);
 }
 
 /* =========================
-   HEADER
+   BOTÓN PRINCIPAL
 ========================= */
 
-.shopping-header {
+.shopping-list-button {
+  position: relative;
+
   display: flex;
   align-items: center;
 
-  gap: 16px;
+  width: 100%;
 
-  margin-bottom: 22px;
+  padding: 22px 24px;
+
+  border: none;
+  background: transparent;
+
+  color: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-family: inherit;
 }
+
+/* =========================
+   ICONO
+========================= */
 
 .shopping-icon {
   display: flex;
@@ -34,6 +62,8 @@
   width: 52px;
   height: 52px;
 
+  margin-right: 16px;
+
   border-radius: 16px;
 
   background: #eee6d9;
@@ -41,6 +71,14 @@
   font-size: 25px;
 
   flex-shrink: 0;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.shopping-header-text {
+  flex: 1;
 }
 
 .shopping-subtitle {
@@ -52,7 +90,7 @@
   color: #9a8873;
 }
 
-.shopping-header h2 {
+.shopping-header-text h2 {
   margin: 0;
 
   font-size: 21px;
@@ -70,12 +108,65 @@
 }
 
 /* =========================
+   FLECHA
+========================= */
+
+.shopping-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(91, 76, 60, 0.16);
+  border-radius: 50%;
+
+  color: #756655;
+
+  font-size: 13px;
+
+  opacity: 0.7;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.shopping-list.open .shopping-arrow {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.shopping-details {
+  padding: 0 24px 22px;
+
+  animation: shoppingOpen 0.35s ease;
+}
+
+@keyframes shoppingOpen {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
    ITEMS
 ========================= */
 
 .shopping-items {
-  display: flex;
-  flex-direction: column;
+  border-top: 1px solid rgba(91, 76, 60, 0.09);
+
+  padding-top: 8px;
 }
 
 .shopping-item {
@@ -87,7 +178,7 @@
   padding: 13px 4px;
 
   border: none;
-  border-bottom: 1px solid rgba(91, 76, 60, 0.09);
+  border-bottom: 1px solid rgba(91, 76, 60, 0.08);
 
   background: transparent;
 
